@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TripsService } from '../../shared/services/trips.service';
+import { Trip } from '../../shared/models/trip.model';
 
 @Component({
   selector: 'app-finder-results',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./finder-results.component.css']
 })
 export class FinderResultsComponent implements OnInit {
-
-  constructor() { }
-
+  trips: Array<Trip> = [];
+  
+  constructor(private tripsService: TripsService) {}
+  
   ngOnInit() {
+    this.trips = this.tripsService.trips;
   }
 
 }

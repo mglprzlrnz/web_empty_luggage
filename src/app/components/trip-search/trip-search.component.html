@@ -1,3 +1,25 @@
-<p>
-  trip-search works!
-</p>
+<form (ngSubmit)="onSubmitTripSearch(tripSearchForm)" #tripSearchForm="ngForm">
+  <fieldset>
+    <legend>Search a trip: </legend>
+    <div>
+      <h6>From: </h6>
+      <label for="searcher">City: </label>
+      <input type="text"  name="fromCity" [(ngModel)]="searcher.fromCity" required>
+      <label for="searcher">Country: </label>
+      <input type="text" name="fromCountry" [(ngModel)]="searcher.fromCountry" required>
+    </div>
+    <div>
+        <h6>To: </h6>
+        <label for="searcher">City: </label>
+        <input type="text" name="toCity" [(ngModel)]="searcher.toCity" required>
+        <label for="searcher">Country: </label>
+        <input type="text" name="toCountry" [(ngModel)]="searcher.toCountry" required>
+    </div>
+    <div>
+      <label for="searcher">Weight: </label>
+      <input type="number" name="weight" [(ngModel)]="searcher.weight" required>
+    </div>
+    <button type="submit" class="btn btn-sm" >Search</button>
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </fieldset>
+</form>

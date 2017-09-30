@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Trip } from '../../shared/models/trip.model';
+import { TripsService } from '../../shared/services/trips.service';
 
 @Component({
   selector: 'app-top-trips',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-trips.component.css']
 })
 export class TopTripsComponent implements OnInit {
-
-  constructor() { }
+  trips: Array<Trip> = [];
+  
+  constructor(private tripsService: TripsService) { }
 
   ngOnInit() {
+    this.tripsService.getRecents().subscribe(
+      recents => this.trips = recents
+    );
   }
 
 }
