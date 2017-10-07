@@ -1,0 +1,21 @@
+<div>
+  <div class="traveller">
+    <div class="textArea">
+      <h4>Traveller</h4>
+      <p>User : {{trip?.owner.name}} </p>
+      <p>Contact : {{trip?.owner.email}} </p>
+    </div>
+  </div>
+  <div class="tripInfo">
+    <div class="textArea">
+      <h4>Trip info</h4>
+      <p>Departure Date: {{trip?.departureDateTime | date: 'yyyy-MM-dd HH:mm'}}</p>
+      <p>From: {{trip?.from.city}}, {{trip?.from.country}}</p>
+      <p>To: {{trip?.to.city}}, {{trip?.to.country}}</p>
+      <p>Arrival Date: {{trip?.arrivalDateTime | date: 'yyyy-MM-dd HH:mm'}}</p>
+      <p>Available Space: {{trip?.bag.dimensions.high}} cm X {{trip?.bag.dimensions.width}} cm</p>
+      <p>Available Weight {{trip?.bag.weight}} kg.</p>
+    </div>
+  </div> 
+</div>
+

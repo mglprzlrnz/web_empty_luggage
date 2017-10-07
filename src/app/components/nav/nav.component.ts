@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../../shared/models/user.model';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-nav',
@@ -11,6 +12,7 @@ import { User } from '../../shared/models/user.model';
 export class NavComponent implements OnInit {
   currentUser: User;
   error: string;
+  private onUserChanges: Subscription;
   
   constructor(
     private router: Router,
@@ -18,6 +20,13 @@ export class NavComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.currentUser = this.authService.user;
+    this.onUserChanges = this.authService.onUserChanges().subscribe(
+      (user) => this.currentUser = user
+    );
+  }
+
+  ngOnChanges() {
     this.currentUser = this.authService.user;
   }
 

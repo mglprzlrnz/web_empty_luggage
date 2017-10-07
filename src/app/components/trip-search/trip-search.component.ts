@@ -20,7 +20,7 @@ export class TripSearchComponent implements OnInit {
     this.tripsService.getAll(this.searcher).subscribe(
       (trips) => {
         form.reset();
-        this.router.navigate(['/finder']);
+        this.router.navigate(['/trips']);
       },
       (error) => { this.error = error.message; }
     );

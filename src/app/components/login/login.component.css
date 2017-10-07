@@ -1,0 +1,24 @@
+.home {
+    width: 300px;
+    margin: 20px auto;  
+}
+
+input {
+    width: 290px;
+
+}
+.field {
+    margin: 10px auto;
+}
+
+h6 {
+    font-weight: bold;
+}
+h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.marginTop {
+    margin-top: 20px;
+}

@@ -1,0 +1,42 @@
+<div class="home">
+
+  <form (ngSubmit)="onSubmitTrip(newTripForm)" #newTripForm="ngForm">
+      <fieldset>
+
+        <h3>NEW TRIP</h3>
+        
+        <div class="field">
+            <h6>From</h6>
+            <label for="fromCity">City</label>
+            <input type="text" [(ngModel)]="newTrip.from.city" name="fromCity">
+            <label for="fromCountry">Country</label>
+            <input type="text" [(ngModel)]="newTrip.from.country" name="fromCountry">
+        </div>
+        <div class="field">
+            <label for="departureDateTime">Departure</label>
+            <input type="text" [(ngModel)]="newTrip.departureDateTime" name="departureDateTime">
+        </div>
+        
+        <div class="field marginTop">
+            <h6>To</h6>
+            <label for="toCity">City</label>
+            <input type="text" [(ngModel)]="newTrip.to.city" name="toCity">
+            <label for="toCountry">Country</label>
+            <input type="text" [(ngModel)]="newTrip.from.country" name="toCountry">
+        </div>
+        <div class="field">
+            <label for="arrivalDateTime">Arrival</label>
+            <input type="text" [(ngModel)]="newTrip.arrivalDateTime" name="arrivalDateTime">
+        </div>
+
+        
+        
+        <button type="submit">Create Trip</button>
+      </fieldset>
+
+
+
+
+  </form>
+
+</div>

@@ -1,4 +1,4 @@
-<h2>SEARCH RESULTS</h2>
+<h2>MY TRIPS</h2>
 <div>
   <div class="tripInfo" *ngFor="let trip of trips">
     <div class="textArea">
@@ -6,7 +6,7 @@
       <p>To: {{trip.to.city}}</p>
       <p>Departure Date: {{trip.departureDateTime | date: 'yyyy-MM-dd HH:mm'}}</p>
       <p>Arrival Date: {{trip.arrivalDateTime | date: 'yyyy-MM-dd HH:mm'}}</p>
-      <a [routerLink]="['/trips', trip._id]">See more...</a>
+      <a [routerLink]="['/mytrips', trip._id]">See more...</a>
     </div>
 
   </div>

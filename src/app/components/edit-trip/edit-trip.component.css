@@ -1,16 +1,17 @@
+
 .tripInfo {
     width: 310px;
+    background-color: #F5F5DE;
     margin: 10px auto;
     border-style: solid;
     border-color: #073950;
 }
 
-h2 {
-    text-align: center;
-    font-size: 25px;
-}
-
 .textArea {
     padding: 5px;
     background-color: #F5F5DE;
+}
+
+button {
+    margin-left: 7px;
 }

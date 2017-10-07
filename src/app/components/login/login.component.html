@@ -1,11 +1,12 @@
+<div class="home">
 <form (ngSubmit)="onSubmitLogin(loginForm)" #loginForm="ngForm">
   <fieldset>
-    <legend>Login</legend>
-    <div>
+    <h2>LOGIN</h2>
+    <div class="field">
       <label for="user">Email: </label>
       <input type="text" name="email" [(ngModel)]="user.email" required>
     </div>
-    <div>
+    <div class="field">
       <label for="user">Password: </label>
       <input type="password" name="password" [(ngModel)]="user.password" required>
     </div>
@@ -13,3 +14,4 @@
     <p class="error" *ngIf="error">{{ error }}</p>
   </fieldset>
 </form>
+</div>

@@ -1,0 +1,45 @@
+<div class="home">
+  <form (ngSubmit)="onSubmitEditTrip(editTrip)" #editTrip="ngForm">
+      <fieldset>
+        <h3>EDIT TRIP </h3>
+        <div class="field">
+          <h6>Departure: </h6>
+          <label for="trip">Date: </label>
+          <input ngui-datetime-picker name="departureDateTime" (ngModelChange)="trip.departureDateTime=$event" [ngModel]="trip?.departureDateTime | date: 'yyyy-MM-dd HH:mm'" required>
+        </div>
+        <div class="field marginTop">
+          <h6>From: </h6>
+          <label for="trip">City: </label>
+          <input type="text"  name="fromCity" [(ngModel)]="trip?.from.city" required>
+          <label for="trip">Country: </label>
+          <input type="text" name="fromCountry" [(ngModel)]="trip?.from.country" required>
+        </div>
+
+        <div class="field marginTop">
+          <h6>Arrival: </h6>
+          <input ngui-datetime-picker name="arrivalDateTime" (ngModelChange)="trip.arrivalDateTime=$event" [ngModel]="trip?.arrivalDateTime | date: 'yyyy-MM-dd HH:mm'" required>
+        </div>
+        <div class="field marginTop">
+          <h6>To: </h6>
+          <label for="trip">City: </label>
+          <input type="text" name="toCity" [(ngModel)]="trip?.to.city" required>
+          <label for="trip">Country: </label>
+          <input type="text" name="toCountry" [(ngModel)]="trip?.to.country" required>
+        </div>
+        <div class="field marginTop">
+          <h6>Weight (kg):</h6>
+          <input type="number" name="weight" [(ngModel)]="trip?.bag.weight" required>
+        </div>
+        <div class="field marginTop">
+          <h6>Dimensions: </h6>
+          <label for="trip">High (cm): </label>
+          <input type="text" name="high" [(ngModel)]="trip?.bag.dimensions.high" required>
+          <label for="trip">Width (cm): </label>
+          <input type="text" name="width" [(ngModel)]="trip?.bag.dimensions.width" required>
+        </div>
+        
+        <button type="submit" class="btn btn-sm" >Edit</button>
+        <p class="error" *ngIf="error">{{ error }}</p>
+      </fieldset>
+    </form>
+  </div>

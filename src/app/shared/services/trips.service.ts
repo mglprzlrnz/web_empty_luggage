@@ -40,5 +40,11 @@ export class TripsService extends BaseApiService {
     .catch(super.handleError);
   }
  
+  getTripDetails(trip_id: string): Observable<Trip> {
+    return this.http.get(`${BaseApiService.baseApi}/trips/${trip_id}`, BaseApiService.defaultOptions)
+      .map(res => res.json())
+      .catch(super.handleError);
+  }
+
 
 }
