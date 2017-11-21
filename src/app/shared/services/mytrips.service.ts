@@ -35,7 +35,8 @@ export class MytripsService extends BaseApiService {
   }
 
   editUserTripDetails(trip: Trip): Observable<Trip> {
-    return this.http.put(`${BaseApiService.baseApi}/user/trips/${trip._id}`, BaseApiService.defaultOptions)
+    this.trip = trip;
+    return this.http.put(`${BaseApiService.baseApi}/user/trips/${trip._id}`, JSON.stringify(trip), BaseApiService.defaultOptions)
       .map(res => res.json())
       .catch(super.handleError);
   }

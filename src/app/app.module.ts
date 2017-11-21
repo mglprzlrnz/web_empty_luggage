@@ -20,13 +20,15 @@ import { FinderMenuComponent } from './components/finder-menu/finder-menu.compon
 import { FinderResultsComponent } from './components/finder-results/finder-results.component';
 import { HomeComponent } from './components/home/home.component';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TripDetailComponent } from './components/trip-detail/trip-detail.component';
 import { MyTripsComponent } from './components/my-trips/my-trips.component';
 import { UserTripDetailsComponent } from './components/user-trip-details/user-trip-details.component';
 import { NewTripComponent } from './components/new-trip/new-trip.component';
 import { EditTripComponent } from './components/edit-trip/edit-trip.component';
 import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+
 
 
 const routes: Routes = [
@@ -58,12 +60,13 @@ const routes: Routes = [
     UserTripDetailsComponent,
     NewTripComponent,
     EditTripComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     NguiDatetimePickerModule,
     FormsModule,
+    MultiselectDropdownModule,
     HttpModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes)

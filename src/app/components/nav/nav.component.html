@@ -1,20 +1,17 @@
-<button type="button" [routerLink]="['/']">Home</button>
-<button *ngIf="!currentUser" type="button" [routerLink]="['/login']">Login</button>
-<button *ngIf="!currentUser" type="button" [routerLink]="['/register']">Register</button>
-<button *ngIf="currentUser" type="button" [routerLink]="['/mytrips']">My Trips</button>
-<button *ngIf="currentUser" type="button" [routerLink]="['/newtrip']">Create a new trip</button>
-<button *ngIf="currentUser" type="button"  (click)="logout()">Logout</button>
-<h5 *ngIf="currentUser">Welcome: {{currentUser.name}}</h5>
+<nav class="navbar">
 
-<!-- <nav>
-    <h1><a href="/"> EMPTY LUGGAGE </a></h1>
-    <h1 *ngIf="currentUser">Welcome: {{currentUser.name}}</h1>
-    <div class="dropdown">
-      <button class="dropbtn"></button>
-        <div class="dropdown-content">
-          <a *ngIf="!currentUser" [routerLink]="['/register']">Register</a>
-          <a *ngIf="!currentUser" [routerLink]="['/login']">Login</a>
-          <a *ngIf="currentUser" (click)="logout()">Logout</a>
-        </div>
-    </div>
-</nav> -->
+  <div class="navbar-header">
+     <img src="../../assets/images/logo-nav.png" alt="logo-nav">
+     <a class="navbar-brand" [routerLink]="['/']">  EMPTY LUGGAGE</a>
+
+  </div>
+  <div>
+      <button class="btn" *ngIf="!currentUser" type="button" [routerLink]="['/login']">Login</button>
+      <button class="btn" *ngIf="!currentUser" type="button" [routerLink]="['/register']">Register</button>
+      <button class="btn" *ngIf="currentUser" type="button" [routerLink]="['/mytrips']">My Trips</button>
+      <button class="btn" *ngIf="currentUser" type="button" [routerLink]="['/newtrip']">Create a new trip</button>
+      <button class="btn" *ngIf="currentUser" type="button"  (click)="logout()">Logout</button>
+
+  </div>
+  
+</nav>

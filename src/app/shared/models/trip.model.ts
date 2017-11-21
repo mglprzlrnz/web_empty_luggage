@@ -7,14 +7,11 @@ export class Place {
 
 export class Bag {
     weight: number;
-    dimensions: Dimensions = {} as Dimensions;
     restrictions: Array<string>;
-}
-
-export class Dimensions {
     high: number;
     width: number;
 }
+
 
 export class Trip {
     _id: string;

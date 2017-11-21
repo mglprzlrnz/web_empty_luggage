@@ -33,10 +33,14 @@
         <div class="field marginTop">
           <h6>Dimensions: </h6>
           <label for="trip">High (cm): </label>
-          <input type="text" name="high" [(ngModel)]="trip?.bag.dimensions.high" required>
+          <input type="text" name="high" [(ngModel)]="trip?.bag.high" required>
           <label for="trip">Width (cm): </label>
-          <input type="text" name="width" [(ngModel)]="trip?.bag.dimensions.width" required>
+          <input type="text" name="width" [(ngModel)]="trip?.bag.width" required>
         </div>
+        <div class="field marginTop">
+            <h3>Restrictions</h3>
+            <ss-multiselect-dropdown name="restrictions" [options]="restrictions" (ngModelChange)="trip.bag.restrictions=$event" [(ngModel)]="trip?.bag.restrictions"></ss-multiselect-dropdown>
+          </div>
         
         <button type="submit" class="btn btn-sm" >Edit</button>
         <p class="error" *ngIf="error">{{ error }}</p>

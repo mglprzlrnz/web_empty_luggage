@@ -19,40 +19,20 @@ export class NewTripService extends BaseApiService {
     this.newTrip = JSON.parse(localStorage.getItem('newTrip'));
   }
 
-  // createNewTrip(newTrip: Trip): Observable<User | string> {
-  //   const data: Object = {
-  //     owner: this.user._id,
-  //     from: {
-  //         city: newTrip.from.city,
-  //         country: newTrip.from.country,
-  //     },
-  //     to: {
-  //         city: newTrip.from.country,
-  //         country: newTrip.from.country,
-  //     };
-  //     departureDateTime: newTrip.departure.date + newTrip.departure.time,
-  //     arrivalDateTime: Date,
-  //     bag: {
-  //         restrictions: ,
-  //         weight: newTrip.bag.weight,
-  //         dimensions: {
-  //             high: number,
-  //             width: number,
-  //         }  
-  //     }
-  //   };
-  //   return this.http.post(`${BaseApiService.baseApi}/trips`, JSON.stringify(data), BaseApiService.defaultOptions)
-  //     .map((res: Response) => {
-  //       this.authenticate(res.json());
-  //       return this.user;
-  //     })
-  //     .catch(this.handleError);
-  // }
+  createNewTrip(newTrip: Trip): Observable<User | string> {
+    const data: Trip = newTrip;
+    return this.http.post(`${BaseApiService.baseApi}/user/trips`, JSON.stringify(data), BaseApiService.defaultOptions)
+      .map((res: Response) => {
+        this.authenticate(res.json());
+        return this.user;
+      })
+      .catch(this.handleError);
+  }
 
-  // private authenticate(user: User): User {
-  //   this.user = user;
-  //   localStorage.setItem('user', JSON.stringify(user));
-  //   return this.user;
-  // }
+  private authenticate(user: User): User {
+    this.user = user;
+    localStorage.setItem('user', JSON.stringify(user));
+    return this.user;
+  }
 
 }

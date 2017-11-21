@@ -23,3 +23,9 @@ h2 {
 .marginTop {
     margin-top: 20px;
 }
+
+.h6 {
+    font-weight: bold;
+    font-size: 21px;
+}
+

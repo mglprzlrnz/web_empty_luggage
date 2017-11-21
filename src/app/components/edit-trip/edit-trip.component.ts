@@ -2,6 +2,8 @@ import { MytripsService } from './../../shared/services/mytrips.service';
 import { Trip } from './../../shared/models/trip.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -11,6 +13,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditTripComponent implements OnInit {
   trip: Trip;
+  restrictions: Array<IMultiSelectOption> = [
+    { id: 'Animals', name: 'Animals' },
+    { id: 'Plants', name: 'Plants' },
+    { id: 'Alcochol', name: 'Alcochol' },
+    { id: 'Liquids', name: 'Liquids' },
+    { id: 'Food', name: 'Food' },
+    { id: 'Tobacco', name: 'Tobacco' },
+];
   error: Error;
   
   constructor(

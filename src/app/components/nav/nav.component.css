@@ -1,0 +1,15 @@
+.navbar {
+    width: 100%;
+    height: 120px;
+    background-color:rgb(197, 197, 121);
+    color: #073950;
+    margin: 0;
+    padding: 10px 2%;
+
+}
+
+img {
+    max-height: 40px;
+    padding: 5px;
+}
+

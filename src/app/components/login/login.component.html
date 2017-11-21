@@ -10,7 +10,7 @@
       <label for="user">Password: </label>
       <input type="password" name="password" [(ngModel)]="user.password" required>
     </div>
-    <button type="submit" class="btn btn-sm" [disabled]="!loginForm.valid">Login</button>
+    <button type="submit" class="btn" [disabled]="!loginForm.valid">Login</button>
     <p class="error" *ngIf="error">{{ error }}</p>
   </fieldset>
 </form>

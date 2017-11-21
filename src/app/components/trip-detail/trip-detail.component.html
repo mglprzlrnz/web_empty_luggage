@@ -13,8 +13,9 @@
       <p>From: {{trip?.from.city}}, {{trip?.from.country}}</p>
       <p>To: {{trip?.to.city}}, {{trip?.to.country}}</p>
       <p>Arrival Date: {{trip?.arrivalDateTime | date: 'yyyy-MM-dd HH:mm'}}</p>
-      <p>Available Space: {{trip?.bag.dimensions.high}} cm X {{trip?.bag.dimensions.width}} cm</p>
+      <p>Available Space: {{trip?.bag.high}} cm X {{trip?.bag.width}} cm</p>
       <p>Available Weight {{trip?.bag.weight}} kg.</p>
+      <p>Restrictions: {{trip?.bag.restrictions}}</p>
     </div>
   </div> 
 </div>

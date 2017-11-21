@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
       (user) => {
         registerForm.reset();
         this.router.navigate(['/']);
+        location.reload();
       },
       (error) => { this.error = error.message; }
     );

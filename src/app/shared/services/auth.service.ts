@@ -25,6 +25,19 @@ export class AuthService extends BaseApiService {
     return this.user ? true : false;
   }
 
+  authenticate(user: User): User {
+    this.user = user;
+    localStorage.setItem('user', JSON.stringify(this.user));
+    this.userSubject.next(this.user);
+    return this.user;
+  }
+
+  deAuthenticate(): void {
+    this.user = undefined;
+    this.userSubject.next(this.user);
+    localStorage.removeItem('user');
+  }
+
   getCurrentUser(): User {
     return this.user;
   }
@@ -40,12 +53,6 @@ export class AuthService extends BaseApiService {
         return this.user;
       })
       .catch(super.handleError);
-  }
-
-  private authenticate(user: User): User {
-    this.user = user;
-    localStorage.setItem('user', JSON.stringify(user));
-    return this.user;
   }
 
   onUserChanges(): Observable<User> {

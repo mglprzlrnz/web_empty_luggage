@@ -14,7 +14,7 @@
         </div>
         <div class="field">
             <label for="departureDateTime">Departure</label>
-            <input type="text" [(ngModel)]="newTrip.departureDateTime" name="departureDateTime">
+            <input ngui-datetime-picker type="text" [(ngModel)]="newTrip.departureDateTime" name="departureDateTime">
         </div>
         
         <div class="field marginTop">
@@ -22,20 +22,36 @@
             <label for="toCity">City</label>
             <input type="text" [(ngModel)]="newTrip.to.city" name="toCity">
             <label for="toCountry">Country</label>
-            <input type="text" [(ngModel)]="newTrip.from.country" name="toCountry">
+            <input type="text" [(ngModel)]="newTrip.to.country" name="toCountry">
         </div>
         <div class="field">
             <label for="arrivalDateTime">Arrival</label>
-            <input type="text" [(ngModel)]="newTrip.arrivalDateTime" name="arrivalDateTime">
+            <input ngui-datetime-picker type="text" [(ngModel)]="newTrip.arrivalDateTime" name="arrivalDateTime">
         </div>
 
+        <div class="field marginTop">
+            <label class="h6" for="weight">Weight (kg):</label>
+            <input type="text" [(ngModel)]="newTrip.bag.weight" name="weight">
+        </div>
+
+        <div class="field marginTop">
+            <h6>Dimensions</h6>
+            <label for="high">High (cm):</label>
+            <input type="text" [(ngModel)]="newTrip.bag.high" name="high">
+            <label for="width">Width (cm):</label>
+            <input type="text" [(ngModel)]="newTrip.bag.width" name="width">
+        </div>
+
+        <div class="field marginTop">
+          <h3>Restrictions</h3>
+          <ss-multiselect-dropdown class="clear" name="restrictions" [options]="restrictions" [(ngModel)]="newTrip.bag.restrictions"></ss-multiselect-dropdown>
+        </div>
         
         
-        <button type="submit">Create Trip</button>
+        <button type="submit" class="btn btn-sm">Create Trip</button>
+        <p class="error" *ngIf="error">{{ error }}</p>
+
       </fieldset>
-
-
-
 
   </form>
 

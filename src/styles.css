@@ -3,20 +3,16 @@ body {
     font-size: 16px;
     color: #073950;
     font-family: 'Roboto Condensed', sans-serif;
-    background: url(assets/images/background.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-      
+    background-color: rgb(248, 248, 237);
+
 }
 input {
-    background-color: #F5F5DE;
+    background-color: rgb(197, 197, 121);
     border-color: #073950; 
 }
 
 button {
-    background-color: #F5F5DE;
+    background-color: rgb(197, 197, 121);
     color: #073950;
     border-color: #073950; 
 }
@@ -25,3 +21,19 @@ a {
     color: inherit;
     text-decoration: inherit;
   }
+
+
+  ss-multiselect-dropdown  {
+    
+        background-color: rgb(197, 197, 121);
+        color: #073950;
+        border-color: #073950; 
+    }
+
+.btn-secondary {
+
+    background-color: rgb(197, 197, 121);
+    color: #073950;
+    border-color: #073950; 
+
+}
